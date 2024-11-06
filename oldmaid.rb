@@ -38,9 +38,9 @@ def pick(player_hand,opponent_hand)
   player_hand.hand << opponent_hand.hand.shift
 end
 
-def win(player_hand) 
-  if player_hand.hand.empty?
-    puts "#{player_hand.name}の勝ち"
+def win(player) 
+  if player.hand.empty?
+    puts "#{player.name}の勝ち"
   end
 end
 
