@@ -97,9 +97,9 @@ cards.each_with_index do |card, index|
   players[player_index].hand << card
 end
 
-players.each_with_index do |player, index|
-  check(players[index])
-  puts "#{players[index].name}の手札は#{players[index].hand.size}枚です"
+players.each do |player|
+  check(player)
+  puts "#{player.name}の手札は#{player.hand.size}枚です"
 end
 
 puts "ゲームを開始します"
