@@ -55,8 +55,8 @@ def play_start(players)
         check(player)
         puts "#{player.name}の手札は残り#{player.hand.size}枚です"
         puts "#{players[index - 1].name}の手札は残り#{players[index - 1].hand.size}枚です"
-        win(player)
         win(players[index - 1])
+        win(player)
       end
     end
   end
@@ -105,6 +105,9 @@ puts "ゲームを開始します"
 while (players.size > 1) do
   play_start(players)
   players = remain_players_check(players)
+  if players.any? { |player| player.hand.empty?}
+    remain_players_check(players)
+  end
 end
 
 puts "ゲームを終了します"
