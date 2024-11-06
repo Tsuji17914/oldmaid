@@ -30,9 +30,7 @@ def check(player_hand)
       remain << card
     end
   end
-  remain.each do |card|
-   player_hand.hand << card
-  end
+  player_hand.hand.concat(remain)
 end
 
 def pick(player_hand,opponent_hand)
