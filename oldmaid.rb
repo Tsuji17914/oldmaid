@@ -23,11 +23,11 @@ end
 def check(player_hand)
   remain = []
   while (card = player_hand.hand.shift)
-      pair = player_hand.hand.find {|c| c.number == card.number }
+    pair = player_hand.hand.find {|c| c.number == card.number }
     if pair
       player_hand.hand.delete(pair)
     else
-    remain << card
+      remain << card
     end
   end
   remain.each do |card|
